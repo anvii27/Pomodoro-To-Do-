@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro To-Do App</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kairo</h1>
+        <p>Stay productive with work and break cycles</p>
+      </header>
+      <div class="timer-container">
+        <div class="pet-container">
+          <div class="pet">🐱</div>
+          <div class="pet-message">I'll help you stay focused!</div>
+        </div>
+        <div class="timer-mode">Work Time</div>
+        <div class="timer-display">25:00</div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="timer-controls">
+          <button class="start-btn">Start</button>
+          <button class="pause-btn" disabled>Pause</button>
+          <button class="reset-btn">Reset</button>
+        </div>
+      </div>
+      <div class="todo-container">
+        <div class="todo-header">
+          <h2>Tasks</h2>
+          <span class="tasks-counter">0 tasks</span>
+        </div>
+        <form class="todo-form">
+          <input
+            type="text"
+            class="todo-input"
+            placeholder="Add a new task..."
+          />
+          <button type="submit" class="add-btn">Add</button>
+        </form>
+        <ul class="tasks-list"></ul>
+      </div>
+    </div>
+    <script src="todoscript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #54a0ff;
+  --bg-color: #f9f7f7;
+  --text-color: #333;
+  --task-bg: #fff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.timer-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+}
+
+.timer-display {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--primary-color);
+}
+
+.timer-mode {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--text-color);
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.reset-btn {
+  background-color: #ddd;
+  color: var(--text-color);
+}
+
+.todo-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: 2px solid #eee;
+  font-size: 1rem;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+}
+
+.tasks-list {
+  list-style-type: none;
+}
+
+.task-item {
+  background-color: var(--task-bg);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.task-checkbox {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  position: relative;
+}
+
+.task-checkbox.checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.delete-task {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px;
+  box-shadow: none;
+}
+
+.delete-task:hover {
+  color: var(--primary-color);
+  transform: none;
+  box-shadow: none;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0%;
+  transition: width 1s linear;
+}
+
+/* Break mode styles */
+body.break-mode {
+  --primary-color: #54a0ff;
+}
+
+.pet-container {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.pet {
+  font-size: 4rem;
+  margin-bottom: 8px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.pet-message {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .timer-display {
+    font-size: 3rem;
+  }
+
+  .timer-controls {
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .timer-display {
+    font-size: 2.5rem;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
